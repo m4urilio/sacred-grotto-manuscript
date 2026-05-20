@@ -64,7 +64,7 @@
       font-size: 1.3rem;
     }
     .logo-text {
-      font-size: 1.1rem; font-weight: 800;
+      font-size: 1.1rem; font-weight: 700;
       color: var(--white); letter-spacing: -.3px; line-height: 1.2;
     }
     .logo-text span { color: var(--gold); }
@@ -99,7 +99,7 @@
       width: 100%; display: flex; align-items: center; gap: 5px;
       background: none; border: none; cursor: pointer;
       color: var(--grey-400); font-size: .78rem; font-weight: 600;
-      font-family: inherit; padding: 0 0 12px 0;
+      font-family: 'Lora', Georgia, serif; padding: 0 0 12px 0;
       transition: color .2s;
     }
     .back-btn:hover { color: var(--grey-600); }
@@ -179,7 +179,7 @@
       flex: 1; padding: 22px 10px;
       border-radius: 12px; border: 2px solid var(--grey-200);
       background: var(--white); cursor: pointer;
-      font-size: .98rem; font-weight: 700; font-family: inherit;
+      font-size: .98rem; font-weight: 700; font-family: 'Lora', Georgia, serif;
       transition: all .2s;
       display: flex; flex-direction: column; align-items: center; gap: 8px;
       color: var(--grey-800);
@@ -224,7 +224,7 @@
       margin-bottom: 16px;
     }
     .mid-title {
-      font-size: 1.45rem; font-weight: 800;
+      font-size: 1.45rem; font-weight: 700;
       color: var(--grey-800); line-height: 1.35;
       margin-bottom: 14px;
     }
@@ -250,7 +250,7 @@
       width: 100%; padding: 16px;
       background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
       color: white;
-      font-size: .98rem; font-weight: 700; font-family: inherit;
+      font-size: .98rem; font-weight: 700; font-family: 'Lora', Georgia, serif;
       border: none; border-radius: 10px; cursor: pointer;
       transition: opacity .2s, transform .15s, box-shadow .2s;
     }
@@ -280,7 +280,7 @@
       margin-bottom: 18px;
     }
     .result-title {
-      font-size: 1.45rem; font-weight: 800;
+      font-size: 1.45rem; font-weight: 700;
       color: var(--grey-800); line-height: 1.35; margin-bottom: 14px;
     }
     .result-title span { color: var(--purple); }
@@ -305,13 +305,13 @@
     }
     .result-feature .f-icon { font-size: 1.3rem; display: block; margin-bottom: 4px; }
     .btn-cta {
-      width: 100%; padding: 18px;
+      display: block; width: 100%; padding: 18px;
       background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
       color: #1a0a00;
-      font-size: 1rem; font-weight: 800; font-family: inherit;
+      font-size: 1rem; font-weight: 700; font-family: 'Lora', Georgia, serif;
       border: none; border-radius: 10px; cursor: pointer;
+      text-decoration: none;
       transition: opacity .2s, transform .15s, box-shadow .2s;
-      letter-spacing: -.1px;
     }
     .btn-cta:hover {
       opacity: .92;
@@ -370,7 +370,6 @@
         <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
       </div>
     </div>
-
     <div id="quizContainer"></div>
   </main>
 
@@ -391,139 +390,137 @@
   </div>
 
   <script>
-    const QUESTIONS = [
-      {
-        id: 1, type: 'choice',
-        text: 'Which area of your life are you most seeking to transform right now?',
-        options: [
-          '&#128150; Love &amp; Relationships — I want to attract or heal my love life',
-          '&#128176; Finances &amp; Abundance — I want to open the flow of prosperity',
-          '&#127775; Purpose &amp; Career — I want clarity and fulfillment in my path',
-          '&#129717; Spiritual Growth — I want a deeper connection with the divine',
-        ],
-      },
-      {
-        id: 2, type: 'choice',
-        text: 'How would you describe your current spiritual practice?',
-        options: [
-          'I have no regular practice — I am just beginning',
-          'I pray or meditate occasionally, but not consistently',
-          'I have a regular practice but feel something is missing',
-          'I am deeply committed and always seeking to go deeper',
-        ],
-      },
-      {
-        id: 3, type: 'choice',
-        text: 'When you pray or set an intention, how often do you feel truly heard by the Universe?',
-        options: [
-          'Rarely — I feel disconnected and doubtful',
-          'Sometimes — results are inconsistent',
-          'Often — I notice signs and synchronicities',
-          'Almost always — I have a strong connection to the divine',
-        ],
-      },
-      {
-        id: 4, type: 'choice',
-        text: 'What is your greatest obstacle to manifesting what you desire?',
-        options: [
-          'Limiting beliefs and deep-rooted fears',
-          'Lack of faith — I struggle to truly believe',
-          'I don\'t know the right methods or sacred tools to use',
-          'Past wounds and emotional blocks holding me back',
-        ],
-      },
-      {
-        id: 5, type: 'choice',
-        text: 'Have you ever experienced a powerful spiritual sign, synchronicity, or answered prayer?',
-        options: [
-          'Never — I have not noticed anything like that',
-          'Once or twice — but I wasn\'t sure what to make of it',
-          'Yes, several times — it confirmed my faith',
-          'Frequently — signs and miracles are part of my life',
-        ],
-      },
-      {
-        id: 6, type: 'choice',
-        text: 'How would you describe your current relationship with abundance and money?',
-        options: [
-          'Scarcity is constant — I feel stuck financially',
-          'Unstable — good periods followed by setbacks',
-          'Decent, but far below what I know I deserve',
-          'I feel abundance in some areas but blocked in others',
-        ],
-      },
-      {
-        id: 7, type: 'choice',
-        text: 'How familiar are you with Saint Germain and the Violet Flame tradition?',
-        options: [
-          'Completely new — I have never heard of it',
-          'I have heard of it but know very little',
-          'I know the basics and feel drawn to it',
-          'I have studied it and feel deeply connected to it',
-        ],
-      },
-      {
-        id: 8, type: 'choice',
-        text: 'How would you describe your current love life or relationships?',
-        options: [
-          'Lonely — I have not found the right person yet',
-          'In a relationship but feeling disconnected or stuck',
-          'Healing from a painful breakup or loss',
-          'Open and ready to attract a deep, divine connection',
-        ],
-      },
-      {
-        id: 9, type: 'choice',
-        text: 'Have you ever worked with sacred prayers, decrees, or affirmations before?',
-        options: [
-          'No, I have never tried anything like this',
-          'Yes, but I did not feel any real change',
-          'Yes, and I noticed subtle but real shifts',
-          'Yes, and the results were profound and undeniable',
-        ],
-      },
-      {
-        id: 10, type: 'choice',
-        text: 'Are you willing to commit to a daily sacred practice if it promised to open doors in your life?',
-        options: [
-          'Absolutely — I am ready to start immediately',
-          'Yes, as long as it is simple and practical',
-          'Maybe — it depends on the time commitment required',
-          'I prefer something I can do on my own schedule',
-        ],
-      },
-      {
-        id: 11, type: 'yesno',
-        text: 'Would you like to receive the 33 Secret Prayers of Saint Germain — a sacred collection designed to open the way to love, finances, and every area of your life?',
-      },
-      {
-        id: 12, type: 'yesno',
-        text: 'If there was a proven sacred method — used by masters of the Law of Attraction — that could dissolve your blocks and align you with divine abundance, would you want to access it?',
-      },
-      {
-        id: 13, type: 'yesno',
-        text: 'Are you ready to receive the 33 Secret Prayers of Saint Germain and begin your transformation today?',
-      },
+    /* ═══════════════════════════════════════════
+       BRANCHING QUIZ — 33 Secret Prayers of Saint Germain
+       Q1 (shared) → Q2 (branch by life area)
+       → 5 themed Qs → mid message
+       → 3 shared Qs → 3 dynamic yes/no → result
+    ═══════════════════════════════════════════ */
+
+    const BRANCH_KEYS  = ['money', 'love', 'spirituality', 'health'];
+    const TRACK_LABELS = {
+      money:        'finances &amp; abundance',
+      love:         'love &amp; relationships',
+      spirituality: 'spirituality &amp; purpose',
+      health:       'health &amp; vitality',
+    };
+
+    // Q1 — shared opener
+    const Q_SHARED_START = [{
+      id: 1, type: 'choice',
+      text: 'How long have you been seeking a spiritual or life breakthrough?',
+      options: [
+        'I am just beginning — something recently awakened inside me',
+        'A few months — I feel a calling I can no longer ignore',
+        'For years — I have tried many paths but lasting change eludes me',
+        'I feel stuck in a cycle I cannot seem to break on my own',
+      ],
+    }];
+
+    // Q2 — branch selector
+    const Q_BRANCH = {
+      id: 2, type: 'choice', isBranch: true,
+      text: 'Which area of your life is calling for a divine transformation right now?',
+      options: [
+        '&#128176; Finances &amp; Abundance — I want to open the flow of prosperity',
+        '&#10084;&#65039; Love &amp; Relationships — I want to attract or heal my love life',
+        '&#10024; Spirituality &amp; Purpose — I want a deeper connection with the divine',
+        '&#127807; Health &amp; Vitality — I want to restore my energy and wellbeing',
+      ],
+    };
+
+    // Q3–Q7 — five themed questions per track
+    const TRACKS = {
+      money: [
+        { id:3, type:'choice', text:'How would you honestly describe your current financial reality?', options:['Constant struggle — money never seems to stay with me','Unstable — good periods always followed by setbacks','Comfortable, but far below what I know I deserve','Blocked — I work hard but the flow just will not open'] },
+        { id:4, type:'choice', text:'When you think about money, what emotion rises most strongly?', options:['Fear and anxiety — I worry about lack constantly','Guilt — deep down I feel undeserving of real prosperity','Frustration — I do everything right but results never match','Confusion — I do not understand why abundance eludes me'] },
+        { id:5, type:'choice', text:'Have you ever prayed or set sacred intentions around financial abundance?', options:['Never — I did not know spirituality could open financial doors','Yes, but I felt no real shift in my circumstances','Yes, and I noticed some change — but it did not last','Yes — I deeply believe spirit and financial flow are connected'] },
+        { id:6, type:'choice', text:'What do you sense is the spiritual root of your financial block?', options:['Generational patterns — inherited beliefs about money and lack','Deep unworthiness — a hidden feeling that I do not deserve it','Fear of wealth — unconscious resistance to having more','I have not identified the block — that is exactly why I am here'] },
+        { id:7, type:'choice', text:'If a sacred daily practice could open the flow of abundance, how ready are you?', options:['Completely ready — I will start tonight','Very ready — I just need the right sacred tools','Mostly ready — I have doubts but I truly want this','I need more clarity before I can fully commit'] },
+      ],
+      love: [
+        { id:3, type:'choice', text:'How would you honestly describe your current love life?', options:['Deeply lonely — I have not yet found my person','In a relationship but feeling disconnected or unloved','Healing from a painful breakup or betrayal','Open and ready — I want to attract a divine love now'] },
+        { id:4, type:'choice', text:'What do you sense is the deepest spiritual block in your love life?', options:['I keep attracting the wrong people — the same patterns repeat','I feel unworthy of real, lasting, unconditional love','Past wounds are still open, preventing me from trusting again','I have lost faith that the love I deserve truly exists for me'] },
+        { id:5, type:'choice', text:'Have you ever used prayer or spiritual practice to attract or heal love?', options:['Never — I did not know spirituality could open this door','Yes, but I saw no change in my love life','Yes, and something shifted — but the pattern returned','Yes — I believe love and spiritual energy are completely intertwined'] },
+        { id:6, type:'choice', text:'When you imagine your ideal relationship, what feels most out of reach?', options:['Being truly chosen and loved without conditions','Finding someone spiritually aligned with my soul','Breaking the cycle of toxic or one-sided connections','Healing my own heart enough to fully receive love'] },
+        { id:7, type:'choice', text:'How ready are you to use sacred prayers to open your heart and attract divine love?', options:['Completely ready — love is my highest priority right now','Very ready — I have been looking for the right sacred path','Mostly ready — hopeful, but a little afraid to open up again','I want to understand more before I open my heart fully'] },
+      ],
+      spirituality: [
+        { id:3, type:'choice', text:'How would you describe the state of your spiritual connection right now?', options:['Completely disconnected — I feel spiritually empty inside','Searching — I sense there is more, but I cannot find it','Growing — I have moments of connection but it is inconsistent','Awake but stuck — I need a deeper practice to go further'] },
+        { id:4, type:'choice', text:'What is the greatest obstacle to your spiritual growth?', options:['Doubt — I struggle to trust what I cannot see or prove','Distraction — daily life constantly pulls me from my practice','Lack of tools — I do not know the right sacred methods','Old wounds and unresolved emotions blocking my path forward'] },
+        { id:5, type:'choice', text:'Have you ever worked with sacred decrees, prayers, or the Violet Flame?', options:['Never — I am completely new to this tradition','I have heard of it but never actually practiced it','Yes, briefly — and I felt something undeniably powerful','Yes — this tradition resonates at the deepest level of my soul'] },
+        { id:6, type:'choice', text:'How often do you experience signs, synchronicities, or divine confirmations?', options:['Rarely — I feel my prayers and intentions go unanswered','Occasionally — I notice them but still doubt myself','Often — I know the Universe is speaking to me','Constantly — I live in full awareness of divine guidance'] },
+        { id:7, type:'choice', text:'If you received a proven sacred practice, how committed would you be to following it daily?', options:['Fully committed — I am ready for a total spiritual shift','Very committed — I just need the right guidance','Somewhat committed — I want to begin gently','I need more understanding before I can truly commit'] },
+      ],
+      health: [
+        { id:3, type:'choice', text:'How would you describe your current physical and energetic health?', options:['Struggling — chronic issues are affecting my quality of life','Drained — I feel tired, heavy, and depleted most days','Recovering — I have been through something and I am rebuilding','Okay physically, but something feels spiritually off in my body'] },
+        { id:4, type:'choice', text:'What do you believe is the deepest spiritual root of your health challenges?', options:['Unresolved emotional trauma stored deep in my body','Spiritual imbalance — my energy field feels blocked or heavy','Generational or karmic patterns expressing through my health','I have not identified the root yet — that is why I am here'] },
+        { id:5, type:'choice', text:'Have you ever used prayer, intention, or sacred practice to support your healing?', options:['Never — I relied only on conventional medicine and methods','Yes, but I did not feel a real link between spirit and healing','Yes, and I experienced genuine relief and real improvement','Yes — I firmly believe spiritual and physical health are one'] },
+        { id:6, type:'choice', text:'How connected do you feel between your spiritual life and your physical wellbeing?', options:['Not at all — I see them as completely separate','Slightly — I notice my emotions affect my body','Strongly — I know my spiritual state influences my health','Completely — I experience this mind-body-spirit unity daily'] },
+        { id:7, type:'choice', text:'If a sacred daily practice could support your healing journey, how ready are you?', options:['Completely ready — I will try anything that can truly help','Very ready — I have been searching for exactly this','Mostly ready — I have some doubts but I am open','I want to understand more before making a commitment'] },
+      ],
+    };
+
+    // Q8–Q10 — shared closing
+    const Q_SHARED_END = [
+      { id:8, type:'choice', text:'Have you ever experienced an answered prayer or a spiritual miracle in your life?', options:['Never — and that is part of why I am still searching','Once or twice — but I was not fully sure it was real','Yes, several times — it confirmed and deepened my faith','Frequently — miracles and answered prayers are part of my life'] },
+      { id:9, type:'choice', text:'How familiar are you with Saint Germain and the power of the Violet Flame?', options:['Completely new — I have never heard of this before','I have heard the name but know very little about it','I know the basics and feel deeply drawn to this tradition','I have studied it and feel a soul-level connection to it'] },
+      { id:10, type:'choice', text:'How committed are you to beginning a daily sacred practice starting today?', options:['Completely — I am ready to transform my life right now','Very committed — I just need the right tools and guidance','Somewhat — I will start and see what unfolds','I prefer to move at my own rhythm and pace'] },
     ];
 
-    const INTERMEDIATE_AFTER = 7;
+    // Q11–Q13 — dynamic yes/no based on chosen track
+    function getYesNoQuestions(track) {
+      var area = TRACK_LABELS[track];
+      return [
+        { id:11, type:'yesno', text:'Would you like to receive the 33 Secret Prayers of Saint Germain — a sacred collection designed to open the divine path to <em>' + area + '</em> and every area of your life?' },
+        { id:12, type:'yesno', text:'If there was a proven sacred method — used by masters of the Law of Attraction — that could dissolve the exact blocks holding you back in <em>' + area + '</em>, would you want to access it?' },
+        { id:13, type:'yesno', text:'Are you ready to receive the 33 Secret Prayers of Saint Germain and begin your transformation in <em>' + area + '</em> today?' },
+      ];
+    }
 
-    let currentStep = 0;
-    let stepHistory = [];
-    let answers     = {};
-    let advancing   = false;
+    // Mid message content per track
+    var MID_CONTENT = {
+      money:        { icon:'&#128176;', title:'Your path to abundance <span>is about to open.</span>', body:'Based on your answers, there are real spiritual blocks around your finances — and they are not permanent. The 33 Secret Prayers of Saint Germain were designed to dissolve exactly these energetic barriers and restore the divine flow of prosperity.', dots:['Financial blocks rooted in deep spiritual and energetic patterns','Profile compatible with rapid abundance transformation','The Violet Flame can dissolve your blocks and open the flow of prosperity'] },
+      love:         { icon:'&#10084;&#65039;', title:'Your heart is ready to <span>receive divine love.</span>', body:'Based on your answers, the patterns blocking your love life run deeper than circumstances — they are energetic. The right sacred tools can dissolve these patterns and open you to the love your soul truly deserves.', dots:['Love blocks rooted in deep energetic and spiritual patterns','Profile compatible with rapid transformation in relationships','The Violet Flame can heal your heart and attract divine love into your life'] },
+      spirituality: { icon:'&#10024;', title:'Your soul is ready for a <span>deeper awakening.</span>', body:'Based on your answers, you are closer to a spiritual breakthrough than you realize. The obstacles you feel are not signs of failure — they are signs you are ready to rise. The 33 Prayers will guide you through this threshold.', dots:['Spiritual blocks that are real — and entirely dissolve-able','Profile compatible with deep and accelerated spiritual transformation','The Violet Flame of Saint Germain can elevate your connection to the divine'] },
+      health:       { icon:'&#127807;', title:'Your healing <span>begins in the spirit.</span>', body:'Based on your answers, there is a spiritual dimension to your health journey that conventional approaches miss. The 33 Secret Prayers address the energetic and spiritual roots of physical and emotional imbalance at the source.', dots:['Health challenges with deep spiritual and energetic roots','Profile compatible with genuine energetic restoration','The Violet Flame can dissolve the spiritual blocks affecting your wellbeing'] },
+    };
 
-    const container     = document.getElementById('quizContainer');
-    const progressArea  = document.getElementById('progressArea');
-    const progressFill  = document.getElementById('progressFill');
-    const progressLabel = document.getElementById('progressLabel');
-    const progressPct   = document.getElementById('progressPct');
-    const backBtn       = document.getElementById('backBtn');
+    // Result content per track
+    var RESULT_CONTENT = {
+      money:        { icon:'&#128176;', badge:'&#10024; You Are Called to Prosperity', title:'Your path to financial abundance <span>is being opened.</span>', body:'Congratulations on completing your assessment. Your profile reveals someone ready for a profound financial shift. The 33 Secret Prayers of Saint Germain include specific decrees to dissolve poverty consciousness, attract prosperity, and align your energy with divine abundance — used by thousands who have broken free from financial limitation.' },
+      love:         { icon:'&#10084;&#65039;', badge:'&#10024; You Are Called to Divine Love', title:'The love you deserve <span>is closer than you think.</span>', body:'Congratulations on completing your assessment. Your profile reveals a heart ready to receive. The 33 Secret Prayers of Saint Germain include sacred decrees for healing, attracting, and deepening love — dissolving the energetic patterns that have kept you from the relationship your soul truly deserves.' },
+      spirituality: { icon:'&#10024;', badge:'&#10024; You Are Called to Awakening', title:'Your spiritual breakthrough <span>is already unfolding.</span>', body:'Congratulations on completing your assessment. Your profile reveals a soul at the threshold of a profound awakening. The 33 Secret Prayers of Saint Germain are a transmission of divine light — each decree a key to dissolve the veils between you and your highest spiritual potential.' },
+      health:       { icon:'&#127807;', badge:'&#10024; You Are Called to Wholeness', title:'Your healing <span>is already beginning.</span>', body:'Congratulations on completing your assessment. Your profile reveals someone ready for deep restoration. The 33 Secret Prayers of Saint Germain include sacred decrees to cleanse the energy field, dissolve karmic health patterns, and align your body, mind, and spirit with the divine blueprint of perfect health.' },
+    };
 
-    function updateProgress(qNumber) {
-      const pct = Math.round(((qNumber - 1) / QUESTIONS.length) * 100);
+    // ── STATE ──
+    var TOTAL = 13;
+    var INTERMEDIATE_AFTER = 7;
+
+    var sequence      = Q_SHARED_START.concat([Q_BRANCH]);
+    var currentStep   = 0;
+    var stepHistory   = [];
+    var answers       = {};
+    var advancing     = false;
+    var selectedTrack = null;
+
+    function buildSequence(track) {
+      selectedTrack = track;
+      sequence = Q_SHARED_START.concat([Q_BRANCH], TRACKS[track], Q_SHARED_END, getYesNoQuestions(track));
+    }
+
+    var container     = document.getElementById('quizContainer');
+    var progressArea  = document.getElementById('progressArea');
+    var progressFill  = document.getElementById('progressFill');
+    var progressLabel = document.getElementById('progressLabel');
+    var progressPct   = document.getElementById('progressPct');
+    var backBtn       = document.getElementById('backBtn');
+
+    function updateProgress() {
+      var pct = Math.round((currentStep / TOTAL) * 100);
       progressFill.style.width = pct + '%';
-      progressLabel.textContent = 'Question ' + qNumber + ' of ' + QUESTIONS.length;
+      progressLabel.textContent = 'Question ' + (currentStep + 1) + ' of ' + TOTAL;
       progressPct.textContent   = pct + '%';
     }
 
@@ -532,61 +529,63 @@
     }
 
     function renderQuestion(index) {
-      if (index < 0) return;
-      const q = QUESTIONS[index];
-      updateProgress(q.id);
+      if (index < 0 || index >= sequence.length) return;
+      var q = sequence[index];
+      updateProgress();
       showBack(stepHistory.length > 0);
       advancing = false;
 
       if (q.type === 'choice') {
-        container.innerHTML = `
-          <div class="card">
-            <div class="question-label">Question ${q.id} of ${QUESTIONS.length}</div>
-            <div class="question-text">${q.text}</div>
-            <div class="options" id="options"></div>
-          </div>`;
+        container.innerHTML =
+          '<div class="card">' +
+            '<div class="question-label">Question ' + (index + 1) + ' of ' + TOTAL + '</div>' +
+            '<div class="question-text">' + q.text + '</div>' +
+            '<div class="options" id="options"></div>' +
+          '</div>';
 
-        const opts = document.getElementById('options');
-        q.options.forEach((opt, i) => {
-          const btn = document.createElement('button');
+        var opts = document.getElementById('options');
+        q.options.forEach(function(opt, i) {
+          var btn = document.createElement('button');
           btn.className = 'option';
-          btn.innerHTML = `<div class="option-bullet"></div><span>${opt}</span>`;
-          btn.onclick = () => selectAndAdvance(btn, i, q.id);
+          btn.innerHTML = '<div class="option-bullet"></div><span>' + opt + '</span>';
+          btn.onclick = (function(b, idx, qId, isBranch) {
+            return function() { selectAndAdvance(b, idx, qId, isBranch); };
+          })(btn, i, q.id, !!q.isBranch);
           opts.appendChild(btn);
         });
 
         if (answers[q.id] !== undefined) {
-          const allOpts = document.querySelectorAll('.option');
+          var allOpts = document.querySelectorAll('.option');
           if (allOpts[answers[q.id]]) allOpts[answers[q.id]].classList.add('selected');
         }
       } else {
-        container.innerHTML = `
-          <div class="card">
-            <div class="question-label">Question ${q.id} of ${QUESTIONS.length}</div>
-            <div class="question-text">${q.text}</div>
-            <div class="yn-options">
-              <button class="yn-btn yes" onclick="handleYesNo('yes', ${q.id})">
-                <span class="yn-icon">&#10024;</span>
-                Yes, I want that!
-              </button>
-              <button class="yn-btn no" onclick="handleYesNo('no', ${q.id})">
-                <span class="yn-icon">&#10006;</span>
-                No
-              </button>
-            </div>
-          </div>`;
+        container.innerHTML =
+          '<div class="card">' +
+            '<div class="question-label">Question ' + (index + 1) + ' of ' + TOTAL + '</div>' +
+            '<div class="question-text">' + q.text + '</div>' +
+            '<div class="yn-options">' +
+              '<button class="yn-btn yes" onclick="handleYesNo(\'yes\',' + q.id + ')">' +
+                '<span class="yn-icon">&#10024;</span>Yes, I want that!' +
+              '</button>' +
+              '<button class="yn-btn no" onclick="handleYesNo(\'no\',' + q.id + ')">' +
+                '<span class="yn-icon">&#10006;</span>No' +
+              '</button>' +
+            '</div>' +
+          '</div>';
       }
     }
 
-    function selectAndAdvance(btn, idx, qId) {
+    function selectAndAdvance(btn, idx, qId, isBranch) {
       if (advancing) return;
       advancing = true;
 
-      document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      document.querySelectorAll('.option').forEach(function(o) { o.classList.remove('selected'); });
       btn.classList.add('selected');
       answers[qId] = idx;
 
-      setTimeout(() => {
+      if (isBranch) buildSequence(BRANCH_KEYS[idx]);
+
+      setTimeout(function() {
         stepHistory.push({ step: currentStep, wasMid: false });
         currentStep++;
         if (currentStep === INTERMEDIATE_AFTER) {
@@ -602,13 +601,13 @@
       advancing = true;
       answers[qId] = val;
 
-      const btn = document.querySelector('.yn-btn.' + (val === 'yes' ? 'yes' : 'no'));
+      var btn = document.querySelector('.yn-btn.' + (val === 'yes' ? 'yes' : 'no'));
       if (btn) btn.classList.add('selected');
 
-      setTimeout(() => {
+      setTimeout(function() {
         stepHistory.push({ step: currentStep, wasMid: false });
         currentStep++;
-        if (currentStep >= QUESTIONS.length) {
+        if (currentStep >= sequence.length) {
           showResult();
         } else {
           renderQuestion(currentStep);
@@ -617,24 +616,18 @@
     }
 
     function getMidHTML() {
-      return `
-        <div class="mid-card">
-          <div class="mid-icon">&#129717;</div>
-          <div class="mid-badge">Your Spiritual Profile Is Ready</div>
-          <div class="mid-title">The Universe has been <span>waiting for you.</span></div>
-          <p class="mid-body">
-            Based on your answers, your soul is actively seeking an opening —
-            a sacred key to unlock what has been blocked. The 33 Secret Prayers
-            of Saint Germain were transmitted for souls exactly like yours:
-            ready, open, and deserving of a divine breakthrough.
-          </p>
-          <div class="mid-highlights">
-            <div class="mid-highlight-item"><div class="dot"></div>Blocks in your path are real — and they can be dissolved</div>
-            <div class="mid-highlight-item"><div class="dot"></div>Your profile is compatible with rapid spiritual transformation</div>
-            <div class="mid-highlight-item"><div class="dot"></div>The Violet Flame can open doors in love, finances &amp; beyond</div>
-          </div>
-          <button class="btn-continue" onclick="continueMid()">Reveal my full result &rarr;</button>
-        </div>`;
+      var m = MID_CONTENT[selectedTrack] || MID_CONTENT.money;
+      var dots = m.dots.map(function(d) {
+        return '<div class="mid-highlight-item"><div class="dot"></div>' + d + '</div>';
+      }).join('');
+      return '<div class="mid-card">' +
+        '<div class="mid-icon">' + m.icon + '</div>' +
+        '<div class="mid-badge">Your Spiritual Profile Is Ready</div>' +
+        '<div class="mid-title">' + m.title + '</div>' +
+        '<p class="mid-body">' + m.body + '</p>' +
+        '<div class="mid-highlights">' + dots + '</div>' +
+        '<button class="btn-continue" onclick="continueMid()">Reveal my full result &rarr;</button>' +
+      '</div>';
     }
 
     function showMidMessage() {
@@ -652,7 +645,7 @@
 
     function goBack() {
       if (stepHistory.length === 0) return;
-      const prev = stepHistory.pop();
+      var prev = stepHistory.pop();
 
       if (prev.wasMid) {
         currentStep = INTERMEDIATE_AFTER;
@@ -669,32 +662,26 @@
     }
 
     function showResult() {
+      var r = RESULT_CONTENT[selectedTrack] || RESULT_CONTENT.money;
       progressArea.style.display = 'none';
       showBack(false);
-      container.innerHTML = `
-        <div class="result-card">
-          <div class="result-icon">&#10024;</div>
-          <div class="result-badge">&#128150; You Are Divinely Called</div>
-          <div class="result-title">Your path to abundance<br><span>is about to be opened</span></div>
-          <p class="result-body">
-            Congratulations on completing your spiritual assessment. Your profile reveals
-            a soul ready for a profound shift. The 33 Secret Prayers of Saint Germain
-            are a sacred collection of divine decrees — each one a key to unlock a
-            specific door in your life. Love, finances, health, purpose — the Violet Flame
-            of Saint Germain has the power to dissolve every block standing between
-            you and your highest destiny.
-          </p>
-          <div class="result-features">
-            <div class="result-feature"><span class="f-icon">&#129717;</span>33 Sacred Prayers</div>
-            <div class="result-feature"><span class="f-icon">&#128150;</span>Love &amp; Relationships</div>
-            <div class="result-feature"><span class="f-icon">&#128176;</span>Finances &amp; Abundance</div>
-            <div class="result-feature"><span class="f-icon">&#127775;</span>All Areas of Life</div>
-          </div>
-          <a href="https://pay.hotmart.com/D100173663W?checkoutMode=10&bid=1763904333471" class="btn-cta">
-            Access the 33 Secret Prayers now &rarr;
-          </a>
-          <p class="cta-sub">Secure access &bull; Instant delivery &bull; Transform your life today</p>
-        </div>`;
+      container.innerHTML =
+        '<div class="result-card">' +
+          '<div class="result-icon">' + r.icon + '</div>' +
+          '<div class="result-badge">' + r.badge + '</div>' +
+          '<div class="result-title">' + r.title + '</div>' +
+          '<p class="result-body">' + r.body + '</p>' +
+          '<div class="result-features">' +
+            '<div class="result-feature"><span class="f-icon">&#129717;</span>33 Sacred Prayers</div>' +
+            '<div class="result-feature"><span class="f-icon">&#10024;</span>Violet Flame Power</div>' +
+            '<div class="result-feature"><span class="f-icon">&#128176;</span>Finances &amp; Love</div>' +
+            '<div class="result-feature"><span class="f-icon">&#127775;</span>All Areas of Life</div>' +
+          '</div>' +
+          '<a href="https://pay.hotmart.com/D100173663W?checkoutMode=10&bid=1763904333471" class="btn-cta">' +
+            'Access the 33 Secret Prayers now &rarr;' +
+          '</a>' +
+          '<p class="cta-sub">Secure access &bull; Instant delivery &bull; Transform your life today</p>' +
+        '</div>';
     }
 
     // ── INIT ──
