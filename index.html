@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>33 Secret Prayers of Saint Germain — Free Spiritual Assessment</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%237C3AED'/><text x='16' y='23' font-family='Arial,sans-serif' font-size='18' font-weight='bold' fill='%23F59E0B' text-anchor='middle'>✦</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:        #7C3AED;
+      --purple-dark:   #6D28D9;
+      --purple-deeper: #5B21B6;
+      --purple-light:  #F5F3FF;
+      --purple-mid:    #DDD6FE;
+      --gold:          #F59E0B;
+      --gold-dark:     #D97706;
+      --gold-light:    #FFFBEB;
+      --gold-mid:      #FDE68A;
+      --grey-100:      #FAF9FF;
+      --grey-200:      #E5E7EB;
+      --grey-400:      #9CA3AF;
+      --grey-600:      #6B7280;
+      --grey-800:      #1F2937;
+      --white:         #FFFFFF;
+      --radius:        14px;
+      --shadow:        0 4px 28px rgba(124,58,237,.12);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--grey-100);
+      color: var(--grey-800);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      width: 100%;
+      background: linear-gradient(135deg, #1E0845 0%, #3B0F8C 50%, #1E0845 100%);
+      display: flex;
+      justify-content: center;
+      padding: 18px 24px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--gold) 0%, #FCD34D 100%);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .logo-text {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--white); letter-spacing: -.3px; line-height: 1.2;
+    }
+    .logo-text span { color: var(--gold); }
+
+    /* ── WRAPPER ── */
+    .wrapper {
+      width: 100%; max-width: 660px;
+      padding: 32px 16px 60px;
+      display: flex; flex-direction: column; align-items: center;
+    }
+
+    /* ── PROGRESS ── */
+    .progress-area { width: 100%; margin-bottom: 20px; }
+    .progress-meta {
+      display: flex; justify-content: space-between;
+      font-size: .78rem; font-weight: 600; color: var(--grey-400);
+      margin-bottom: 8px;
+    }
+    .progress-bar-bg {
+      width: 100%; height: 7px;
+      background: var(--grey-200); border-radius: 99px; overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--purple) 0%, var(--gold) 100%);
+      border-radius: 99px;
+      transition: width .5s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ── BACK BUTTON ── */
+    .back-btn {
+      width: 100%; display: flex; align-items: center; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      color: var(--grey-400); font-size: .78rem; font-weight: 600;
+      font-family: inherit; padding: 0 0 12px 0;
+      transition: color .2s;
+    }
+    .back-btn:hover { color: var(--grey-600); }
+    .back-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .back-btn.hidden { visibility: hidden; pointer-events: none; }
+
+    /* ── CARD ── */
+    .card {
+      width: 100%;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 32px;
+      animation: fadeUp .35s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-label {
+      font-size: .7rem; font-weight: 700;
+      color: var(--purple); letter-spacing: .1em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .question-text {
+      font-size: 1.18rem; font-weight: 700;
+      color: var(--grey-800); line-height: 1.45;
+      margin-bottom: 26px;
+    }
+
+    /* ── OPTIONS ── */
+    .options { display: flex; flex-direction: column; gap: 10px; }
+
+    .option {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px;
+      border: 2px solid var(--grey-200);
+      border-radius: 10px;
+      cursor: pointer;
+      background: var(--white);
+      transition: border-color .18s, background .18s, transform .14s, box-shadow .18s;
+      font-size: .93rem; font-weight: 500; color: var(--grey-800);
+      text-align: left; width: 100%; font-family: 'Inter', sans-serif;
+    }
+    .option:hover {
+      border-color: var(--purple);
+      background: var(--purple-light);
+      transform: translateX(4px);
+      box-shadow: 0 2px 12px rgba(124,58,237,.1);
+    }
+    .option.selected {
+      border-color: var(--purple);
+      background: var(--purple-light);
+    }
+    .option-bullet {
+      width: 20px; height: 20px; min-width: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--grey-400);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .18s, background .18s;
+      flex-shrink: 0;
+    }
+    .option.selected .option-bullet {
+      border-color: var(--purple);
+      background: var(--purple);
+    }
+    .option.selected .option-bullet::after {
+      content: '';
+      width: 7px; height: 7px;
+      background: white; border-radius: 50%;
+    }
+
+    /* ── YES/NO ── */
+    .yn-options { display: flex; gap: 14px; }
+    .yn-btn {
+      flex: 1; padding: 22px 10px;
+      border-radius: 12px; border: 2px solid var(--grey-200);
+      background: var(--white); cursor: pointer;
+      font-size: .98rem; font-weight: 700; font-family: inherit;
+      transition: all .2s;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--grey-800);
+    }
+    .yn-btn .yn-icon { font-size: 1.75rem; }
+    .yn-btn.yes:hover, .yn-btn.yes.selected {
+      border-color: var(--purple); background: var(--purple-light);
+      color: var(--purple-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(124,58,237,.2);
+    }
+    .yn-btn.no:hover, .yn-btn.no.selected {
+      border-color: var(--grey-400); background: var(--grey-100);
+      color: var(--grey-600);
+      transform: translateY(-2px);
+    }
+
+    /* ── INTERMEDIATE MESSAGE ── */
+    .mid-card {
+      width: 100%;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 32px;
+      text-align: center;
+      animation: fadeUp .45s ease both;
+    }
+    .mid-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--gold-light) 100%);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2.2rem;
+    }
+    .mid-badge {
+      display: inline-block;
+      background: var(--purple-mid); color: var(--purple-deeper);
+      font-size: .74rem; font-weight: 700;
+      padding: 4px 14px; border-radius: 99px;
+      letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .mid-title {
+      font-size: 1.45rem; font-weight: 800;
+      color: var(--grey-800); line-height: 1.35;
+      margin-bottom: 14px;
+    }
+    .mid-title span { color: var(--purple); }
+    .mid-body {
+      font-size: .94rem; color: var(--grey-600);
+      line-height: 1.68; margin-bottom: 24px;
+    }
+    .mid-highlights {
+      display: flex; flex-direction: column; gap: 10px;
+      background: var(--grey-100); border-radius: 10px;
+      padding: 18px 20px; margin-bottom: 28px; text-align: left;
+    }
+    .mid-highlight-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .87rem; font-weight: 500; color: var(--grey-800);
+    }
+    .mid-highlight-item .dot {
+      width: 8px; height: 8px; min-width: 8px;
+      background: var(--gold); border-radius: 50%;
+    }
+    .btn-continue {
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+      color: white;
+      font-size: .98rem; font-weight: 700; font-family: inherit;
+      border: none; border-radius: 10px; cursor: pointer;
+      transition: opacity .2s, transform .15s, box-shadow .2s;
+    }
+    .btn-continue:hover {
+      opacity: .9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(124,58,237,.3);
+    }
+
+    /* ── FINAL RESULT ── */
+    .result-card {
+      width: 100%;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 32px;
+      text-align: center;
+      animation: fadeUp .45s ease both;
+    }
+    .result-icon { font-size: 2.8rem; margin-bottom: 16px; }
+    .result-badge {
+      display: inline-block;
+      background: var(--gold-mid); color: #92400E;
+      font-size: .74rem; font-weight: 700;
+      padding: 4px 14px; border-radius: 99px;
+      letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .result-title {
+      font-size: 1.45rem; font-weight: 800;
+      color: var(--grey-800); line-height: 1.35; margin-bottom: 14px;
+    }
+    .result-title span { color: var(--purple); }
+    .result-body {
+      font-size: .93rem; color: var(--grey-600);
+      line-height: 1.72; margin-bottom: 26px;
+    }
+    .result-features {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px; margin-bottom: 28px;
+    }
+    .result-feature {
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--gold-light) 100%);
+      border-radius: 10px; padding: 14px 12px;
+      font-size: .82rem; font-weight: 600; color: var(--purple-deeper);
+      text-align: center;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .result-feature:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(124,58,237,.14);
+    }
+    .result-feature .f-icon { font-size: 1.3rem; display: block; margin-bottom: 4px; }
+    .btn-cta {
+      width: 100%; padding: 18px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #1a0a00;
+      font-size: 1rem; font-weight: 800; font-family: inherit;
+      border: none; border-radius: 10px; cursor: pointer;
+      transition: opacity .2s, transform .15s, box-shadow .2s;
+      letter-spacing: -.1px;
+    }
+    .btn-cta:hover {
+      opacity: .92;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(245,158,11,.4);
+    }
+    .cta-sub {
+      font-size: .78rem; color: var(--grey-400);
+      margin-top: 12px;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      width: 100%; max-width: 660px;
+      padding: 0 16px;
+      display: flex; justify-content: center; gap: 24px;
+      flex-wrap: wrap; margin-top: 24px;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: .76rem; color: var(--grey-400); font-weight: 500;
+    }
+    .trust-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .card, .mid-card, .result-card { padding: 26px 18px; }
+      .question-text { font-size: 1.06rem; }
+      .result-features { grid-template-columns: 1fr; }
+      .yn-options { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a class="logo" href="#">
+      <div class="logo-icon">&#10024;</div>
+      <div class="logo-text">33 Secret Prayers<br><span>of Saint Germain</span></div>
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="wrapper">
+    <div class="progress-area" id="progressArea">
+      <button class="back-btn hidden" id="backBtn" onclick="goBack()">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Go back
+      </button>
+      <div class="progress-meta">
+        <span id="progressLabel">Question 1 of 13</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div id="quizContainer"></div>
+  </main>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      100% safe &amp; free
+    </div>
+    <div class="trust-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      Your answers are private
+    </div>
+    <div class="trust-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Takes less than 2 minutes
+    </div>
+  </div>
+
+  <script>
+    const QUESTIONS = [
+      {
+        id: 1, type: 'choice',
+        text: 'Which area of your life are you most seeking to transform right now?',
+        options: [
+          '&#128150; Love &amp; Relationships — I want to attract or heal my love life',
+          '&#128176; Finances &amp; Abundance — I want to open the flow of prosperity',
+          '&#127775; Purpose &amp; Career — I want clarity and fulfillment in my path',
+          '&#129717; Spiritual Growth — I want a deeper connection with the divine',
+        ],
+      },
+      {
+        id: 2, type: 'choice',
+        text: 'How would you describe your current spiritual practice?',
+        options: [
+          'I have no regular practice — I am just beginning',
+          'I pray or meditate occasionally, but not consistently',
+          'I have a regular practice but feel something is missing',
+          'I am deeply committed and always seeking to go deeper',
+        ],
+      },
+      {
+        id: 3, type: 'choice',
+        text: 'When you pray or set an intention, how often do you feel truly heard by the Universe?',
+        options: [
+          'Rarely — I feel disconnected and doubtful',
+          'Sometimes — results are inconsistent',
+          'Often — I notice signs and synchronicities',
+          'Almost always — I have a strong connection to the divine',
+        ],
+      },
+      {
+        id: 4, type: 'choice',
+        text: 'What is your greatest obstacle to manifesting what you desire?',
+        options: [
+          'Limiting beliefs and deep-rooted fears',
+          'Lack of faith — I struggle to truly believe',
+          'I don\'t know the right methods or sacred tools to use',
+          'Past wounds and emotional blocks holding me back',
+        ],
+      },
+      {
+        id: 5, type: 'choice',
+        text: 'Have you ever experienced a powerful spiritual sign, synchronicity, or answered prayer?',
+        options: [
+          'Never — I have not noticed anything like that',
+          'Once or twice — but I wasn\'t sure what to make of it',
+          'Yes, several times — it confirmed my faith',
+          'Frequently — signs and miracles are part of my life',
+        ],
+      },
+      {
+        id: 6, type: 'choice',
+        text: 'How would you describe your current relationship with abundance and money?',
+        options: [
+          'Scarcity is constant — I feel stuck financially',
+          'Unstable — good periods followed by setbacks',
+          'Decent, but far below what I know I deserve',
+          'I feel abundance in some areas but blocked in others',
+        ],
+      },
+      {
+        id: 7, type: 'choice',
+        text: 'How familiar are you with Saint Germain and the Violet Flame tradition?',
+        options: [
+          'Completely new — I have never heard of it',
+          'I have heard of it but know very little',
+          'I know the basics and feel drawn to it',
+          'I have studied it and feel deeply connected to it',
+        ],
+      },
+      {
+        id: 8, type: 'choice',
+        text: 'How would you describe your current love life or relationships?',
+        options: [
+          'Lonely — I have not found the right person yet',
+          'In a relationship but feeling disconnected or stuck',
+          'Healing from a painful breakup or loss',
+          'Open and ready to attract a deep, divine connection',
+        ],
+      },
+      {
+        id: 9, type: 'choice',
+        text: 'Have you ever worked with sacred prayers, decrees, or affirmations before?',
+        options: [
+          'No, I have never tried anything like this',
+          'Yes, but I did not feel any real change',
+          'Yes, and I noticed subtle but real shifts',
+          'Yes, and the results were profound and undeniable',
+        ],
+      },
+      {
+        id: 10, type: 'choice',
+        text: 'Are you willing to commit to a daily sacred practice if it promised to open doors in your life?',
+        options: [
+          'Absolutely — I am ready to start immediately',
+          'Yes, as long as it is simple and practical',
+          'Maybe — it depends on the time commitment required',
+          'I prefer something I can do on my own schedule',
+        ],
+      },
+      {
+        id: 11, type: 'yesno',
+        text: 'Would you like to receive the 33 Secret Prayers of Saint Germain — a sacred collection designed to open the way to love, finances, and every area of your life?',
+      },
+      {
+        id: 12, type: 'yesno',
+        text: 'If there was a proven sacred method — used by masters of the Law of Attraction — that could dissolve your blocks and align you with divine abundance, would you want to access it?',
+      },
+      {
+        id: 13, type: 'yesno',
+        text: 'Are you ready to receive the 33 Secret Prayers of Saint Germain and begin your transformation today?',
+      },
+    ];
+
+    const INTERMEDIATE_AFTER = 7;
+
+    let currentStep = 0;
+    let stepHistory = [];
+    let answers     = {};
+    let advancing   = false;
+
+    const container     = document.getElementById('quizContainer');
+    const progressArea  = document.getElementById('progressArea');
+    const progressFill  = document.getElementById('progressFill');
+    const progressLabel = document.getElementById('progressLabel');
+    const progressPct   = document.getElementById('progressPct');
+    const backBtn       = document.getElementById('backBtn');
+
+    function updateProgress(qNumber) {
+      const pct = Math.round(((qNumber - 1) / QUESTIONS.length) * 100);
+      progressFill.style.width = pct + '%';
+      progressLabel.textContent = 'Question ' + qNumber + ' of ' + QUESTIONS.length;
+      progressPct.textContent   = pct + '%';
+    }
+
+    function showBack(visible) {
+      backBtn.classList.toggle('hidden', !visible);
+    }
+
+    function renderQuestion(index) {
+      if (index < 0) return;
+      const q = QUESTIONS[index];
+      updateProgress(q.id);
+      showBack(stepHistory.length > 0);
+      advancing = false;
+
+      if (q.type === 'choice') {
+        container.innerHTML = `
+          <div class="card">
+            <div class="question-label">Question ${q.id} of ${QUESTIONS.length}</div>
+            <div class="question-text">${q.text}</div>
+            <div class="options" id="options"></div>
+          </div>`;
+
+        const opts = document.getElementById('options');
+        q.options.forEach((opt, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'option';
+          btn.innerHTML = `<div class="option-bullet"></div><span>${opt}</span>`;
+          btn.onclick = () => selectAndAdvance(btn, i, q.id);
+          opts.appendChild(btn);
+        });
+
+        if (answers[q.id] !== undefined) {
+          const allOpts = document.querySelectorAll('.option');
+          if (allOpts[answers[q.id]]) allOpts[answers[q.id]].classList.add('selected');
+        }
+      } else {
+        container.innerHTML = `
+          <div class="card">
+            <div class="question-label">Question ${q.id} of ${QUESTIONS.length}</div>
+            <div class="question-text">${q.text}</div>
+            <div class="yn-options">
+              <button class="yn-btn yes" onclick="handleYesNo('yes', ${q.id})">
+                <span class="yn-icon">&#10024;</span>
+                Yes, I want that!
+              </button>
+              <button class="yn-btn no" onclick="handleYesNo('no', ${q.id})">
+                <span class="yn-icon">&#10006;</span>
+                No
+              </button>
+            </div>
+          </div>`;
+      }
+    }
+
+    function selectAndAdvance(btn, idx, qId) {
+      if (advancing) return;
+      advancing = true;
+
+      document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      btn.classList.add('selected');
+      answers[qId] = idx;
+
+      setTimeout(() => {
+        stepHistory.push({ step: currentStep, wasMid: false });
+        currentStep++;
+        if (currentStep === INTERMEDIATE_AFTER) {
+          showMidMessage();
+        } else {
+          renderQuestion(currentStep);
+        }
+      }, 320);
+    }
+
+    function handleYesNo(val, qId) {
+      if (advancing) return;
+      advancing = true;
+      answers[qId] = val;
+
+      const btn = document.querySelector('.yn-btn.' + (val === 'yes' ? 'yes' : 'no'));
+      if (btn) btn.classList.add('selected');
+
+      setTimeout(() => {
+        stepHistory.push({ step: currentStep, wasMid: false });
+        currentStep++;
+        if (currentStep >= QUESTIONS.length) {
+          showResult();
+        } else {
+          renderQuestion(currentStep);
+        }
+      }, 300);
+    }
+
+    function getMidHTML() {
+      return `
+        <div class="mid-card">
+          <div class="mid-icon">&#129717;</div>
+          <div class="mid-badge">Your Spiritual Profile Is Ready</div>
+          <div class="mid-title">The Universe has been <span>waiting for you.</span></div>
+          <p class="mid-body">
+            Based on your answers, your soul is actively seeking an opening —
+            a sacred key to unlock what has been blocked. The 33 Secret Prayers
+            of Saint Germain were transmitted for souls exactly like yours:
+            ready, open, and deserving of a divine breakthrough.
+          </p>
+          <div class="mid-highlights">
+            <div class="mid-highlight-item"><div class="dot"></div>Blocks in your path are real — and they can be dissolved</div>
+            <div class="mid-highlight-item"><div class="dot"></div>Your profile is compatible with rapid spiritual transformation</div>
+            <div class="mid-highlight-item"><div class="dot"></div>The Violet Flame can open doors in love, finances &amp; beyond</div>
+          </div>
+          <button class="btn-continue" onclick="continueMid()">Reveal my full result &rarr;</button>
+        </div>`;
+    }
+
+    function showMidMessage() {
+      progressArea.style.display = 'none';
+      showBack(false);
+      advancing = false;
+      container.innerHTML = getMidHTML();
+    }
+
+    function continueMid() {
+      stepHistory.push({ step: null, wasMid: true });
+      progressArea.style.display = 'block';
+      renderQuestion(currentStep);
+    }
+
+    function goBack() {
+      if (stepHistory.length === 0) return;
+      const prev = stepHistory.pop();
+
+      if (prev.wasMid) {
+        currentStep = INTERMEDIATE_AFTER;
+        progressArea.style.display = 'none';
+        showBack(false);
+        advancing = false;
+        container.innerHTML = getMidHTML();
+        return;
+      }
+
+      currentStep = prev.step;
+      progressArea.style.display = 'block';
+      renderQuestion(currentStep);
+    }
+
+    function showResult() {
+      progressArea.style.display = 'none';
+      showBack(false);
+      container.innerHTML = `
+        <div class="result-card">
+          <div class="result-icon">&#10024;</div>
+          <div class="result-badge">&#128150; You Are Divinely Called</div>
+          <div class="result-title">Your path to abundance<br><span>is about to be opened</span></div>
+          <p class="result-body">
+            Congratulations on completing your spiritual assessment. Your profile reveals
+            a soul ready for a profound shift. The 33 Secret Prayers of Saint Germain
+            are a sacred collection of divine decrees — each one a key to unlock a
+            specific door in your life. Love, finances, health, purpose — the Violet Flame
+            of Saint Germain has the power to dissolve every block standing between
+            you and your highest destiny.
+          </p>
+          <div class="result-features">
+            <div class="result-feature"><span class="f-icon">&#129717;</span>33 Sacred Prayers</div>
+            <div class="result-feature"><span class="f-icon">&#128150;</span>Love &amp; Relationships</div>
+            <div class="result-feature"><span class="f-icon">&#128176;</span>Finances &amp; Abundance</div>
+            <div class="result-feature"><span class="f-icon">&#127775;</span>All Areas of Life</div>
+          </div>
+          <a href="https://pay.hotmart.com/D100173663W?checkoutMode=10&bid=1763904333471" class="btn-cta">
+            Access the 33 Secret Prayers now &rarr;
+          </a>
+          <p class="cta-sub">Secure access &bull; Instant delivery &bull; Transform your life today</p>
+        </div>`;
+    }
+
+    // ── INIT ──
+    renderQuestion(0);
+  </script>
+</body>
+</html>
